@@ -8,7 +8,7 @@
   --accent: #f43f5e; /* crvena/ružičasta */
   --muted: #6b7280; /* siva za tekst */
   --background: #fffaf0; /* bela pozadina */
-  --foreground: #111827; /* tamni tekst */
+  --foreground: #111827; /* tamni tekst yy*/
   --overlay: rgba(0, 0, 0, 0.2);
   --gradient-hero: linear-gradient(
     135deg,
