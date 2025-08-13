@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  --foreground: #171717;
   --primary-color: #3b82f6;
   --secondary-color: #f1f5f9;
   --text-color: #0f172a;
@@ -8,7 +9,8 @@
   --accent: #f43f5e; /* crvena/ružičasta */
   --muted: #6b7280; /* siva za tekst */
   --background: #fffaf0; /* bela pozadina */
-  --foreground: #111827; /* tamni tekst yy*/
+  --foreground: #111827; /* tamni tekst */
+  --muted-foreground: #6b7280; /* siva tekst */
   --overlay: rgba(0, 0, 0, 0.2);
   --gradient-hero: linear-gradient(
     135deg,
