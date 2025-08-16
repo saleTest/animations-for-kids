@@ -8,6 +8,8 @@ import {
   Star as LucideStar,
 } from "lucide-react";
 import FooterCTA from "@/components/Footer";
+import HeroTitle from "@/components/HeroTitle";
+import PlanningChecklist from "@/components/PlanningChecklist";
 
 export default function Home() {
   const services = [
@@ -226,6 +228,16 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <section className="py-20">
+          <HeroTitle
+            title=""
+            highlight="Alati za Savršenu Zabavu"
+            description="Koristite naše alate za planiranje nezaboravne proslave"
+          />
+          <div className="max-w-4xl mx-auto px-4 mt-12">
+            <PlanningChecklist />
+          </div>
+        </section>
       </section>
       <FooterCTA
         title="Spremni Za Nezaboravan Rođendan?"
