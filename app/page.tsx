@@ -141,9 +141,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-20 px-4">
+      <section className="py-20 px-4" data-aos="fade-up">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div
+            className="text-center mb-16"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Naše Usluge</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Sve što trebate za savršenu dječju proslavu na jednom mjestu
@@ -154,7 +158,9 @@ export default function Home() {
             {services.map((service, idx) => (
               <div
                 key={idx}
-                className="rounded-lg bg-card text-card-foreground shadow-sm group hover:shadow-playful transition-all duration-300 hover:-translate-y-2 gradient-card border-0"
+                className="bg-white/60 rounded-lg text-card-foreground shadow-sm group hover:shadow-playful transition-all duration-300 hover:-translate-y-2 border-0"
+                data-aos="zoom-in"
+                data-aos-delay={idx * 150}
               >
                 <div className="p-6">
                   <div className="relative mb-4 rounded-xl overflow-hidden">
@@ -179,51 +185,45 @@ export default function Home() {
       </section>
       <section className="bg-muted/30 py-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-12">Naše Karakteristike</h2>
+          <h2 className="text-3xl font-bold mb-12" data-aos="fade-up">
+            Naše Karakteristike
+          </h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Sigurnost */}
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-400 to-pink-400 text-white text-3xl transition-transform hover:scale-110">
-                🔒
+            {[
+              {
+                icon: "🔒",
+                title: "Sigurnost",
+                text: "Vaša sigurnost nam je prioritet.",
+              },
+              {
+                icon: "⏰",
+                title: "Punktualnost",
+                text: "Uvijek dolazimo na vrijeme.",
+              },
+              {
+                icon: "💼",
+                title: "Profesionalnost",
+                text: "Stručni i pristojni u svakom trenutku.",
+              },
+              {
+                icon: "⭐",
+                title: "Kvalitet",
+                text: "Uvijek pružamo vrhunski kvalitet.",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center gap-4"
+                data-aos="fade-up"
+                data-aos-delay={index * 150}
+              >
+                <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-400 to-pink-400 text-white text-3xl transition-transform hover:scale-110">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p className="text-muted-foreground">{item.text}</p>
               </div>
-              <h3 className="text-xl font-semibold">Sigurnost</h3>
-              <p className="text-muted-foreground">
-                Vaša sigurnost nam je prioritet.
-              </p>
-            </div>
-
-            {/* Punktualnost */}
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-400 to-pink-400 text-white text-3xl transition-transform hover:scale-110">
-                ⏰
-              </div>
-              <h3 className="text-xl font-semibold">Punktualnost</h3>
-              <p className="text-muted-foreground">
-                Uvijek dolazimo na vrijeme.
-              </p>
-            </div>
-
-            {/* Profesionalnost */}
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-400 to-pink-400 text-white text-3xl transition-transform hover:scale-110">
-                💼
-              </div>
-              <h3 className="text-xl font-semibold">Profesionalnost</h3>
-              <p className="text-muted-foreground">
-                Stručni i pristojni u svakom trenutku.
-              </p>
-            </div>
-
-            {/* Kvalitet */}
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-400 to-pink-400 text-white text-3xl transition-transform hover:scale-110">
-                ⭐
-              </div>
-              <h3 className="text-xl font-semibold">Kvalitet</h3>
-              <p className="text-muted-foreground">
-                Uvijek pružamo vrhunski kvalitet.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>

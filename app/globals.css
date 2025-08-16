@@ -18,8 +18,23 @@
     hsl(280 100% 95%) 50%,
     hsl(45 100% 95%) 100%
   );
+  --secondary: 45 100% 70%;
+  --secondary-foreground: 240 20% 15%;
+}
+.bg-secondary {
+  background-color: hsl(var(--secondary));
+}
+.bg-secondary {
+  background-color: hsl(var(--secondary));
 }
 
+.text-secondary-foreground {
+  color: hsl(var(--secondary-foreground));
+}
+
+.bg-secondary-hover:hover {
+  background-color: hsl(var(--secondary) / 0.8);
+}
 /* opcionalno: gradient za hover/active underline */
 .gradient-primary {
   background: linear-gradient(to right, var(--primary), var(--accent));

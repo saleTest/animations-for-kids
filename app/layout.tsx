@@ -1,12 +1,11 @@
 import Navigation from "@/components/Navigation";
 import "./globals.css";
+import AOSInitializer from "../components/AOSInitializer";
 
 export const metadata = {
   title: "Next.js Page Routing & Rendering",
   description: "Learn how to route to different pages.",
 };
-
-import React from "react";
 
 export default function RootLayout({
   children,
@@ -16,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <AOSInitializer /> {/* Ovo sada radi */}
         <div id="page">
           <Navigation />
           <main className="pt-16">{children}</main>

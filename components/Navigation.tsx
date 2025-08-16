@@ -57,10 +57,11 @@ export default function Navigation() {
                 </Link>
               );
             })}
-
-            <button className="h-9 rounded-md px-3 bg-[var(--primary)] text-white hover:bg-[var(--accent)] shadow-button">
-              Rezerviši Sada
-            </button>
+            <Link href="/kontakt">
+              <button className="h-9 rounded-md px-3 bg-[var(--primary)] text-white hover:bg-[var(--accent)] shadow-button">
+                Rezerviši Sada
+              </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -116,9 +117,11 @@ export default function Navigation() {
                 </Link>
               );
             })}
-            <button className="w-full h-9 rounded-md px-3 bg-[var(--primary)] text-white hover:bg-[var(--accent)] shadow-button">
-              Rezerviši Sada
-            </button>
+            <Link href="/kontakt">
+              <button className="w-full h-9 rounded-md px-3 bg-[var(--primary)] text-white hover:bg-[var(--accent)] shadow-button">
+                Rezerviši Sada
+              </button>
+            </Link>
           </div>
         )}
       </div>

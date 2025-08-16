@@ -1,4 +1,7 @@
 "use client";
+import FooterCTA from "@/components/Footer";
+import HeroTitle from "@/components/HeroTitle";
+import Image from "next/image";
 import React, { useState } from "react";
 
 function Galerija() {
@@ -94,12 +97,11 @@ function Galerija() {
 
   return (
     <section>
-      <section
+      {/* <section
         className="py-16 px-4 "
         style={{ background: "var(--gradient-hero)" }}
       >
         <div className="max-w-4xl mx-auto text-center">
-          {/* Ikonica */}
           <div className="flex justify-center mb-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +121,6 @@ function Galerija() {
             </svg>
           </div>
 
-          {/* Naslov */}
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Galerija{" "}
             <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] bg-clip-text text-transparent">
@@ -127,15 +128,21 @@ function Galerija() {
             </span>
           </h1>
 
-          {/* Opis */}
           <p className="text-xl text-[var(--muted-foreground)]">
             Pogledajte najljepše momente sa naših proslava
           </p>
         </div>
-      </section>
+      </section> */}
+      <div data-aos="fade-up">
+        <HeroTitle
+          title="Galerija"
+          highlight="Uspomena"
+          description="Pogledajte najljepše momente sa naših proslava"
+        />
+      </div>
       <section className="py-16 px-4 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-4xl font-bold mb-4">
               Naša <span className="text-[#8B5CF6]">Galerija</span>
             </h2>
@@ -146,7 +153,11 @@ function Galerija() {
           </div>
 
           {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <div
+            className="flex flex-wrap justify-center gap-3 mb-10"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             {categories.map((category) => (
               <button
                 key={category}
@@ -164,17 +175,23 @@ function Galerija() {
 
           {/* Masonry Gallery Grid */}
           <div className="columns-1 sm:columns-2 md:columns-3 gap-4">
-            {filteredImages.map((image) => (
+            {filteredImages.map((image, idx) => (
               <div
                 key={image.id}
                 className="mb-4 break-inside-avoid relative group cursor-pointer"
+                data-aos="zoom-in"
+                data-aos-delay={idx * 100} // Efekat "staggered" prikaza
                 onClick={() => openLightbox(image)}
               >
-                <div className="overflow-hidden rounded-xl shadow-md">
-                  <img
+                <div className="overflow-hidden rounded-xl shadow-md relative h-64 w-full">
+                  <Image
                     src={image.src}
                     alt={image.title}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-xl"
+                    sizes="(max-width: 768px) 100vw,
+                 (max-width: 1200px) 50vw,
+                 33vw"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 rounded-2xl">
@@ -193,7 +210,7 @@ function Galerija() {
               className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
               onClick={closeLightbox}
             >
-              <div className="relative max-w-6xl w-full max-h-[90vh]">
+              <div className="relative max-w-5xl w-full max-h-[90vh]">
                 <button
                   className="absolute top-4 right-4  text-white bg-black/50 rounded-full p-2 z-10"
                   onClick={closeLightbox}
@@ -213,12 +230,14 @@ function Galerija() {
                     />
                   </svg>
                 </button>
-                <img
+                <Image
                   src={selectedImage.src}
                   alt={selectedImage.title}
-                  className="max-h-[90vh]  w-auto mx-auto object-contain"
+                  width={1000} // ili selectedImage.width
+                  height={800} // ili selectedImage.height
+                  className=" w-auto mx-auto object-contain"
                 />
-                <div className="absolute bottom-4 left-0 right-0 text-center  text-white">
+                <div className="absolute bottom-4 left-0 right-0 text-center text-white bg-black/70 p-4 ">
                   <h3 className="text-xl font-bold">{selectedImage.title}</h3>
                   <p className="text-gray-300">{selectedImage.category}</p>
                 </div>
@@ -227,13 +246,26 @@ function Galerija() {
           )}
 
           {/* Load More Button */}
-          <div className="text-center mt-10">
-            <button className="bg-[#8B5CF6] hover:bg-[#7c4fe0] text-white font-medium py-3 px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-1">
+          <div
+            className="text-center mt-10"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            {/* <button className="bg-[#8B5CF6] hover:bg-[#7c4fe0] text-white font-medium py-3 px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-1">
               Učitaj još slika
+            </button> */}
+            <button className="bg-[#8B5CF6] hover:bg-[#7c4fe0] text-white font-medium py-3 px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-1">
+              Očekujte još slika..
             </button>
           </div>
         </div>
       </section>
+      <FooterCTA
+        title="Želite Da Vaša Proslava Bude Ovde?"
+        description="Rezervišite termin i stvorite nezaboravne uspomene"
+        buttonText="Kontaktiraj Nas"
+        buttonLink="/kontakt"
+      />
     </section>
   );
 }
