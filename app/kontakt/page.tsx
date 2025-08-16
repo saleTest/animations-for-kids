@@ -16,7 +16,7 @@ function Kontakt() {
         />
       </div>
 
-      <section className="min-h-screen pt-20">
+      <section className="min-h-screen">
         <div className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12">
