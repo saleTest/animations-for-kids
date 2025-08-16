@@ -64,7 +64,7 @@ function PlanningChecklist() {
   const progress = items.length > 0 ? (completedCount / items.length) * 100 : 0;
 
   return (
-    <div className="bg-white shadow-md rounded-2xl p-4 sm:p-6 space-y-4 max-w-2xl mx-auto w-full">
+    <div className="bg-white/60 shadow-md rounded-2xl p-4 sm:p-6 space-y-4 max-w-2xl mx-auto w-full">
       {/* Header */}
       <div>
         <div className="flex items-center gap-2 text-base sm:text-lg font-semibold">

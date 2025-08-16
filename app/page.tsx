@@ -234,7 +234,7 @@ export default function Home() {
             highlight="Alati za Savršenu Zabavu"
             description="Koristite naše alate za planiranje nezaboravne proslave"
           />
-          <div className="max-w-4xl mx-auto px-4 mt-12">
+          <div className="max-w-4xl mx-auto px-4 mt-12" data-aos="fade-up">
             <PlanningChecklist />
           </div>
         </section>
