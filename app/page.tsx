@@ -235,14 +235,14 @@ export default function Home() {
             highlight="Alati za Savršenu Zabavu"
             description="Koristite naše alate za planiranje nezaboravne proslave"
           />
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="px-4 mt-12 " data-aos="fade-up">
-              <PlanningChecklist />
-            </div>
-            {/* <div className="px-4 mt-12" data-aos="fade-up">
+          {/* <div className="grid lg:grid-cols-2 gap-12"> */}
+          <div className="px-4 mt-12 " data-aos="fade-up">
+            <PlanningChecklist />
+          </div>
+          {/* <div className="px-4 mt-12" data-aos="fade-up">
               <LoyaltyProgram />
             </div> */}
-          </div>
+          {/* </div> */}
         </section>
       </section>
       <FooterCTA
