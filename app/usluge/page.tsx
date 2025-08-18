@@ -1,71 +1,8 @@
 import FooterCTA from "@/components/Footer";
 import HeroTitle from "@/components/HeroTitle";
+import { paketi } from "@/data/paketi";
 import { Check, Sparkles, Star } from "lucide-react";
 import Link from "next/link";
-
-interface Paket {
-  naziv: string;
-  opis: string;
-  cijena: string;
-  trajanje: string;
-  popularno?: boolean;
-  bojaIkone: string; // Tailwind klasa za gradient
-  stavke: string[];
-  link: string;
-}
-
-const paketi: Paket[] = [
-  {
-    naziv: "Osnovna Ponuda",
-    opis: "Savršena za manje proslave",
-    cijena: "150 EUR",
-    trajanje: "/ 2 sata",
-    bojaIkone: "from-blue-500 to-blue-600",
-    stavke: [
-      "Jedan profesionalni animator",
-      "Organizovane igre i aktivnosti",
-      "Farbanje lica",
-      "Baloni i osnovne dekoracije",
-      "Muzika i animacija",
-    ],
-    link: "/kontakt",
-  },
-  {
-    naziv: "Premium Ponuda",
-    opis: "Najpopularniji izbor",
-    cijena: "280 EUR",
-    trajanje: "/ 3 sata",
-    popularno: true,
-    bojaIkone: "from-primary to-purple-600",
-    stavke: [
-      "Dva profesionalna animatora",
-      "Tobogan",
-      "Farbanje lica i tetoviranje",
-      "Pravljenje balona",
-      "Igre i takmičenja",
-      "Dekoracija prostora",
-      "Muzika i DJ",
-    ],
-    link: "/kontakt",
-  },
-  {
-    naziv: "Luksuzna Ponuda",
-    opis: "Za nezaboravne događaje",
-    cijena: "450 EUR",
-    trajanje: "/ 4 sata",
-    bojaIkone: "from-accent to-pink-600",
-    stavke: [
-      "Tri profesionalna animatora",
-      "Tobogan ",
-      "Profesionalno farbanje lica",
-      "Baloni po želji",
-      "Igre, takmičenja i nagrade",
-      "Potpuna dekoracija prostora",
-      "DJ i profesionalno ozvučenje",
-    ],
-    link: "/kontakt",
-  },
-];
 
 export default function Usluge() {
   return (
@@ -90,10 +27,7 @@ export default function Usluge() {
                 data-aos-delay={idx * 150} // Efekat jedan po jedan
               >
                 {paket.popularno && (
-                  <div
-                    className="inline-flex items-center rounded-full text-xs font-semibold absolute bg-purple-600 -top-3 left-1/2 transform -translate-x-1/2 text-white px-4 py-1 shadow-md"
-                    // style={{ background: "var(--primary)" }}
-                  >
+                  <div className="inline-flex items-center rounded-full text-xs font-semibold absolute bg-purple-600 -top-3 left-1/2 transform -translate-x-1/2 text-white px-4 py-1 shadow-md">
                     <Star className="w-4 h-4 mr-1" /> Najpopularniji
                   </div>
                 )}
@@ -109,7 +43,7 @@ export default function Usluge() {
                   <p className="text-muted-foreground">{paket.opis}</p>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-primary">
-                      {paket.cijena}
+                      {paket.cena}
                     </span>
                     <span className="text-muted-foreground ml-2">
                       {paket.trajanje}

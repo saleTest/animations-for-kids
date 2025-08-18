@@ -16,17 +16,18 @@ function Kontakt() {
         />
       </div>
 
-      <section className="min-h-screen">
-        <div className="py-20 px-4">
+      <section className="min-h-screen ">
+        <div className="py-20 px-4 ">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Forma za kontakt */}
               <div
-                className="bg-white rounded-2xl shadow-lg p-6"
+                className="bg-white rounded-2xl shadow-lg p-6  bg-white/80"
                 data-aos="fade-right"
                 data-aos-delay="100"
               >
                 <CardHeader title="Rezervacija termina" />
+                {/* <CardContent /> */}
                 <CardContent />
               </div>
 

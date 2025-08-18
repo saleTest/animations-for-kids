@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import "./globals.css";
 import AOSInitializer from "../components/AOSInitializer";
+import { ToastContainer, toast } from "react-toastify";
 
 export const metadata = {
   title: "Next.js Page Routing & Rendering",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ToastContainer />
         <AOSInitializer /> {/* Ovo sada radi */}
         <div id="page">
           <Navigation />

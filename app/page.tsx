@@ -10,6 +10,7 @@ import {
 import FooterCTA from "@/components/Footer";
 import HeroTitle from "@/components/HeroTitle";
 import PlanningChecklist from "@/components/PlanningChecklist";
+import LoyaltyProgram from "@/components/LoyaltyProgram";
 
 export default function Home() {
   const services = [
@@ -234,8 +235,13 @@ export default function Home() {
             highlight="Alati za Savršenu Zabavu"
             description="Koristite naše alate za planiranje nezaboravne proslave"
           />
-          <div className="max-w-4xl mx-auto px-4 mt-12" data-aos="fade-up">
-            <PlanningChecklist />
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div className="px-4 mt-12 " data-aos="fade-up">
+              <PlanningChecklist />
+            </div>
+            {/* <div className="px-4 mt-12" data-aos="fade-up">
+              <LoyaltyProgram />
+            </div> */}
           </div>
         </section>
       </section>
